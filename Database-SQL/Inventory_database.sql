@@ -25,10 +25,10 @@ CREATE TABLE users (
   status varchar(255) NOT NULL DEFAULT 'Active'
 );
 
-INSERT INTO users (fullName, username, password, status) VALUES
-('Guest', 'guest', '81dc9bdb52d04dc20036dbd8313ed055', 'Active'),
-('a', 'a', '0cc175b9c0f1b6a831c399e269772661', 'Active'),
-('admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Active');
+INSERT INTO users (fullName, username, password,telNo, status) VALUES
+('Guest', 'guest', '81dc9bdb52d04dc20036dbd8313ed055','0784652314', 'Active'),
+('a', 'a', '0cc175b9c0f1b6a831c399e269772661','0756485321', 'Active'),
+('admin', 'admin', '21232f297a57a5a743894a0e4a801fc3','0716582439', 'Active');
 
 INSERT INTO Categories (name) VALUES 
 ('Electronics'),
