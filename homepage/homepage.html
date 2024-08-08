@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
         }
         header {
             background-color: #4CAF50;
@@ -17,7 +22,7 @@
             padding: 1em 0;
         }
         nav {
-            background-color: #333;
+            background-color: #008080;
         }
         nav ul {
             list-style: none;
@@ -36,50 +41,90 @@
             display: block;
         }
         nav ul li a:hover {
-            background-color: #575757;
+            background-color: #005757;
         }
         main {
             padding: 2em;
+            max-width: 1200px;
+            margin: auto;
         }
         section {
             margin-bottom: 2em;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        #services button {
+            padding: 15px 25px;
+            border-radius: 100px;
+            background-color: #4CAF50;
+            background-image: radial-gradient(93% 87% at 87% 89%, rgba(0, 0, 0, 0.23) 0%, transparent 86.18%), radial-gradient(66% 87% at 26% 20%, rgba(255, 255, 255, 0.41) 0%, rgba(255, 255, 255, 0) 69.79%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: 2px 19px 31px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            font-size: 16px;
+            border: 0;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            cursor: pointer;
+        }
+        #services button:hover {
+            background-color: #45a049;
+        }
+        .summary-item {
+            display: flex;
+            align-items: center;
+            margin: 1em 0;
+        }
+        .summary-item .material-icons {
+            font-size: 2em;
+            margin-right: 0.5em;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Inventory Management System</h1>
+    </header>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#overview">Overview</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     <main>
-        <section id="home">
-            <h2>Home</h2>
-            <p>This is the home section.</p>
+        <section id="welcome">
+            <h2>Welcome, <span id="username">User</span>!</h2>
         </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>This is the about section.</p>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Welcome to our Inventory Management System! Designed with efficiency and ease of use in mind,
+                 our platform offers comprehensive tools to streamline your inventory processes. Monitor 
+                 stock levels, track orders, manage suppliers, and analyze sales data all from one 
+                 intuitive interface. Our system ensures real-time updates, accurate inventory tracking, 
+                 and insightful analytics to help you make informed decisions and optimize your business 
+                 operations. Whether you're a small business owner or a large enterprise, our solution 
+                 adapts to your needs, providing the support you need to manage your inventory seamlessly 
+                 and effectively.</p>
         </section>
         <section id="services">
-            <h2>Services</h2>
-            <p>This is the services section.</p>
+            <h2>Services Offered</h2>
+            <ul>
+                <li>Manage Items</li>
+                <li>View Reports</li>
+            </ul>
+            <button id="manage-items">Manage Items</button>
+            <button id="view-reports">View Reports</button>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>This is the contact section.</p>
+        <section id="summary">
+            <h2>Inventory Status</h2>
+            <div class="summary-item">
+                <span class="material-icons">inventory</span>
+                <p>Total Items: <span id="total-items">0</span></p>
+            </div>
+            <div class="summary-item">
+                <span class="material-icons">warning</span>
+                <p>Low Stock Alerts: <span id="low-stock">0</span></p>
+            </div>
         </section>
     </main>
 </body>
