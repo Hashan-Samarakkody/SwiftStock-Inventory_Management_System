@@ -1,0 +1,7 @@
+# This is a CODEOWNERS file.
+# It designates who is responsible for code review and approvals for different parts of the repository.
+
+# The following rule designates @Hashan-Samarakkody as the code owner for all files in the repository.
+# This means @Hashan-Samarakkody will be requested for review on all pull requests affecting any file.
+
+* @Hashan-Samarakkody
