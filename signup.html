@@ -75,5 +75,40 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let username = document.getElementById('username').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+    
+    // Email validation using a regular expression
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address!');
+        return;
+    }
+
+    // Password validation to ensure it contains letters, uppercase letters, and symbols
+    let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[a-zA-Z0-9!@#$%^&*(),.?":{}|<>]{8,}$/;
+    if (!passwordPattern.test(password)) {
+        alert('Password must contain at least one lowercase letter, one uppercase letter, one special character, and be at least 8 characters long!');
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    
+
+    // Submit the form via AJAX or proceed to server-side validation
+    this.submit();
+});
+
+    </script>
 </body>
 </html>
