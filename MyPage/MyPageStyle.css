@@ -3,3 +3,23 @@
 body {
     font-family: "Poppins", sans-serif;
 }
+
+.columns {
+    /* column-count: 4; */
+    columns: 4 250px;
+    column-gap: 10px;
+
+}
+
+.columns p {
+    margin-top: 0;
+}
+
+.columns h2 {
+    margin-top: 0;
+    background-color: lightgray;
+    break-inside: avoid;
+    width: 10;
+
+    
+}
