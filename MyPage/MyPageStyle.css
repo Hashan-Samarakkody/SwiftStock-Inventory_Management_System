@@ -2,24 +2,96 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    background: rgb(231, 220, 235);
+    margin: 0%;
+    padding: 0%;
 }
 
-.columns {
-    /* column-count: 4; */
-    columns: 4 250px;
-    column-gap: 10px;
 
+/* Container and row styles */
+.container {
+    display: block;
+    background-color: #798cdf;
+    width: auto;
+    height: auto;
+    min-width: min-content;     
 }
 
-.columns p {
-    margin-top: 0;
+.row1 {
+    text-align: center;
+    margin: 0;
+    padding: 2%;
+    background-color: bisque;
 }
 
-.columns h2 {
-    margin-top: 0;
-    background-color: lightgray;
-    break-inside: avoid;
-    width: 10;
+h2 {
+    margin: auto;
+}
 
+.row2 {
+    display:  flex;
+    flex-wrap: wrap;
+    margin: 0; 
+    padding: auto; 
+}
+
+/* Column styles */
+.col {
+    background-color: #ccc;
+    min-width: 250px;
+    margin: 0.5em;
+    padding: 1%;
+}
+
+/* Image styles */
+img {
+    display: flex;
+    justify-content: center; 
+    justify-items: center;
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
     
+}
+
+/* Profile information styles */
+.profile-info {
+    text-align: left;
+    margin: 0.5em;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.fillarea {
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Experience section styles */
+.experience-section {
+    border: 1px solid #ccc;
+    padding: 20px;
 }

@@ -1,17 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Page</title>
     <link rel="stylesheet" href="MyPageStyle.css">
-    
+
 </head>
+
 <body>
-    <div class="">
+    <div class="container">
+        <div class="row1">
+            <h2>My Page</h2>
+        </div>
+        <div class="row2">
+            <div class="col">
+                <div>
+                    <div class="profile-image"><img
+                            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+                            alt="Profile picture" width="120">
+                    </div>
+
+                    <!-- this need to be change according to user -->
+                    <div class="profile-info">
+                        <p>Edogaru</p>
+                        <p>edogaru@mail.com.my</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <h3>Profile Settings</h3>
+                <form>
+                    <div class="fillarea">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="First Name" autofocus>
+                    </div>
+                    <div class="fillarea">
+                        <label for="surname">Surname:</label>
+                        <input type="text" id="surname" placeholder="Surname">
+                    </div>
+                    <div class="fillarea">
+                        <label for="mobile">Mobile Number:</label>
+                        <input type="text" id="mobile" placeholder="Enter Phone Number">
+                    </div>
+                    <div class="fillarea">
+                        <label for="email">Email ID:</label>
+                        <input type="text" id="email" placeholder="Enter Email ID">
+                    </div>
+                    <div class="fillarea">
+                        <label for="country">Country:</label>
+                        <input type="text" id="country" placeholder="Country">
+                    </div>
+                    <div class="fillarea">
+                        <label for="state">State/Region:</label>
+                        <input type="text" id="state" placeholder="State">
+                    </div>
+                    <br>
+                    <button type="submit">Save Profile</button>
+                </form>
+            </div>
+            <div class="col">
+                <h4>Edit Experience</h4>
+                <div class="fillarea">
+                    <label for="experience">Experience in Designing:</label>
+                    <br>
+                    <input class="experience-section" type="text" id="experience" placeholder="Experience">
+                </div>
+                <div class="fillarea ">
+                    <label for="details">Additional Details:</label>
+                    <br>
+                    <input class="experience-section" type="text" id="details" placeholder="Additional Details">
+                </div>
+            </div>
+        </div>
 
     </div>
 
-    
+
+
 </body>
+
 </html>
