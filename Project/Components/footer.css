@@ -1,0 +1,216 @@
+/* Import Poppins font and Font Awesome icons */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+/* Reset margin and padding for all elements, and set the default font */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Flexbox settings for content to fill remaining space */
+.content {
+    flex: auto;
+}
+
+/* Styles for the footer section */
+.footer {
+    position: relative;
+    /* Position relative to allow for layout control */
+    bottom: 0;
+    /* Stick the footer to the bottom */
+    left: 0;
+    /* Align footer to the left edge */
+    width: 100%;
+    /* Full width of the container */
+    background: rgb(8, 0, 93);
+    /* Dark background color */
+}
+
+/* Layout and spacing for the footer rows */
+.footer .footer-row {
+    display: flex;
+    /* Use flexbox for layout */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+    justify-content: space-between;
+    /* Space items evenly */
+    gap: 1rem;
+    /* Space between items */
+    padding: 20px;
+    /* Padding inside the footer */
+}
+
+/* Style for footer column headers */
+.footer-row .footer-col h4 {
+    color: #fff;
+    /* White text color */
+    font-size: 1.2rem;
+    /* Font size for headers */
+    font-weight: 400;
+    /* Normal font weight */
+}
+
+/* Styles for links in the footer columns */
+.footer-col .links {
+    margin-top: 10px;
+    /* Space above the links */
+}
+
+.footer-col .links li {
+    list-style: none;
+    /* Remove bullet points from list items */
+    margin-bottom: 5px;
+    /* Space below each link */
+}
+
+.footer-col .links li a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: #bfbfbf;
+    /* Light gray color for links */
+}
+
+.footer-col .links li a:hover {
+    color: #fff;
+    /* Change link color on hover */
+}
+
+/* Styles for text paragraphs in footer columns */
+.footer-col p {
+    margin: 20px 0;
+    /* Space above and below paragraphs */
+    color: #bfbfbf;
+    /* Light gray text color */
+    max-width: 300px;
+    /* Limit paragraph width */
+}
+
+/* Styles for the footer form */
+.footer-col form {
+    display: flex;
+    /* Use flexbox for form layout */
+    gap: 5px;
+    /* Space between form elements */
+}
+
+.footer-col input {
+    height: 40px;
+    /* Set input height */
+    border-radius: 6px;
+    /* Rounded corners for input */
+    background: none;
+    /* No background color */
+    width: 100%;
+    /* Full width of the container */
+    outline: none;
+    /* Remove default outline */
+    border: 1px solid #7489C6;
+    /* Border color */
+    caret-color: #fff;
+    /* Cursor color in input */
+    color: #fff;
+    /* Text color in input */
+    padding-left: 10px;
+    /* Space inside the input on the left */
+}
+
+.footer-col input::placeholder {
+    color: #ccc;
+    /* Placeholder text color */
+}
+
+.footer-col form button {
+    background: #fff;
+    /* White background for button */
+    outline: none;
+    /* Remove default outline */
+    border: none;
+    /* Remove default border */
+    padding: 10px 15px;
+    /* Padding inside the button */
+    border-radius: 6px;
+    /* Rounded corners for button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    font-weight: 500;
+    /* Font weight for button text */
+    transition: 0.2s ease;
+    /* Smooth transition for hover effect */
+}
+
+.footer-col form button:hover {
+    background: #cecccc;
+    /* Background color on hover */
+}
+
+/* Styles for social media icons in the footer */
+.footer-col .icons {
+    display: flex;
+    /* Use flexbox for icon layout */
+    margin-top: 30px;
+    /* Space above the icons */
+    gap: 30px;
+    /* Space between icons */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+.footer-col .icons i {
+    color: #afb6c7;
+    /* Light gray color for icons */
+}
+
+.footer-col .icons i:hover {
+    color: #fff;
+    /* Change icon color on hover */
+}
+
+/* Styles for the copyright text */
+#cright {
+    color: #afb6c7;
+    /* Light gray text color */
+    text-align: center;
+    /* Center-align text */
+    font-size: 15px;
+    /* Font size for copyright text */
+}
+
+/* Responsive styles for screens smaller than 1000px */
+@media (max-width: 1000px) {
+    .footer {
+        position: relative;
+        /* Switch to relative positioning for smaller screens */
+        bottom: auto;
+        /* Reset bottom property */
+        left: 0;
+        /* Align footer to the left */
+        transform: none;
+        /* Reset transform property */
+        border-radius: 0;
+        /* Remove border radius */
+    }
+
+    .footer .footer-row {
+        padding: 20px;
+        /* Padding inside the footer */
+        gap: 1rem;
+        /* Space between items */
+    }
+
+    .footer-col form {
+        display: block;
+        /* Stack form elements vertically */
+    }
+
+    .footer-col form :where(input, button) {
+        width: 100%;
+        /* Full width for form elements */
+    }
+
+    .footer-col form button {
+        margin: 10px 0 0 0;
+        /* Space above the button */
+    }
+}
