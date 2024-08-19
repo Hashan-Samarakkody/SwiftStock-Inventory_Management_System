@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="row1">
             <h2>My Page</h2>
@@ -24,15 +25,17 @@
 
                     <!-- this need to be change according to user -->
                     <div class="profile-info">
-                        <p>Edogaru</p>
-                        <p>edogaru@mail.com.my</p>
+                        <p>
+                            <?php echo $firstName . " " . $lastName; ?>
+                        </p>
+                        <p><?php echo $email; ?></p>
                     </div>
 
                 </div>
             </div>
             <div class="col">
                 <h3>Profile Settings</h3>
-                <form>
+                <form action="Mypage.php" method="post">
                     <div class="fillarea">
                         <label for="name">Name:</label>
                         <input type="text" id="name" placeholder="First Name" autofocus>
@@ -43,7 +46,8 @@
                     </div>
                     <div class="fillarea">
                         <label for="mobile">Mobile Number:</label>
-                        <input type="text" id="mobile" placeholder="Enter Phone Number">
+                        <input type="text" id="mobile" maxlength="10" pattern="[0-9]{10}" placeholder="xxx-xxxxxxx"
+                            required>
                     </div>
                     <div class="fillarea">
                         <label for="email">Email ID:</label>
@@ -62,23 +66,25 @@
                 </form>
             </div>
             <div class="col">
-                <h4>Edit Experience</h4>
-                <div class="fillarea">
-                    <label for="experience">Experience in Designing:</label>
-                    <br>
-                    <input class="experience-section" type="text" id="experience" placeholder="Experience">
-                </div>
-                <div class="fillarea ">
-                    <label for="details">Additional Details:</label>
-                    <br>
-                    <input class="experience-section" type="text" id="details" placeholder="Additional Details">
-                </div>
+                <form action="Mypage.php" method="post">
+                    <h4>Edit Experience</h4>
+                    <div class="fillarea">
+                        <label for="experience">Experience in Designing:</label>
+                        <br>
+                        <input class="experience-section" type="text" id="experience" placeholder="Experience">
+                    </div>
+                    <div class="fillarea ">
+                        <label for="details">Additional Details:</label>
+                        <br>
+                        <input class="experience-section" type="text" id="details" placeholder="Additional Details">
+                    </div>
+                </form>
             </div>
         </div>
 
     </div>
 
-
+    <script src="MyPage.js"></script>
 
 </body>
 
