@@ -74,7 +74,7 @@ Follow these steps to install the SwiftStock application on your local or server
 1. **Clone the Repository**: Use Git to clone the repository to your local machine. Run the following command in your terminal, replacing `YOUR-USERNAME` with your GitHub username:
 
     ```bash
-    git clone https://github.com/YOUR-USERNAME/Web-Dev_1.git
+    git clone https://github.com/YOUR-USERNAME/SwiftStock-Inveventory_Management_System.git
     ```
 
 2. **Move the Project Folder**: After cloning, move the root folder of the project to the deployment directory of your web server. For Apache, this is typically the `htdocs` folder.
@@ -113,7 +113,8 @@ To start using the SwiftStock application:
 
 1. **Start Apache and MySQL**: Ensure both Apache and MySQL services are running on your server.
 2. **Deploy the Project**: Place the project directory in the Apache server root or configure a virtual host to point to the project directory.
-3. **Access the Application**: If you are using Apache server, open your web browser at `http://localhost/Web_Dev-1/`. Or, if you are using a virtual host, configure it to point to the project directory.
+3. **Access the Application**: If you are using Apache server, open your web browser at `http://localhost/SwiftStock-Inveventory_Management_System/Project/`. Or, if you are using a virtual host, configure it to point to the project directory.
+
 4. **Default users**:
     - User name :- `user`
     - Password :- `User@001`
@@ -143,6 +144,13 @@ After setting up and running the application, users can perform the following ta
 -   **Update Items**: Modify existing items through the same page.
 -   **Delete Items**: Remove outdated or unnecessary items from the inventory.
 
+#### Search Inventory
+
+-   **Search Items**: Use the `search.php` page to search for items in the inventory.
+-   **Search by ID**: Locate specific items using their unique identifiers.
+-   **Search by Category**: Filter inventory items based on their assigned categories for quicker access.
+-   **Search by Name**: Quickly find items by searching their names.
+
 #### Reports
 
 -   **Generate Reports**: Access `createReport.php` to generate comprehensive reports on the current inventory status.
@@ -165,3 +173,14 @@ Here are common issues and their solutions:
 ### 10. Credits
 
 SwiftStock was developed by **Group 8** as the final project for the Web Applications Development - I course. The team members contributed to various aspects of the project, including front-end design, back-end development, database management, and testing.
+
+**Team Members: Group 8**
+
+-   _[Nuzha](https://github.com/Nuzha-Kitchilan)_
+-   _[Hansini](https://github.com/Hansini2002)_
+-   _[Samadhi](https://github.com/SamadhiWadithya)_
+-   _[Githmi](https://github.com/Githz26)_
+-   _[Mathumithan](https://github.com/Mathu20011013)_
+-   _[Shenal](https://github.com/Shen-fons)_
+-   _[Dinan](https://github.com/DDJkln)_
+-   _[Hashan](https://github.com/Hashan-Samarakkody)_
