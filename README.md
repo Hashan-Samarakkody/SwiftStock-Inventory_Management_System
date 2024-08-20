@@ -182,5 +182,4 @@ SwiftStock was developed by **Group 8** as the final project for the Web Applica
 -   _[Githmi](https://github.com/Githz26)_
 -   _[Mathumithan](https://github.com/Mathu20011013)_
 -   _[Shenal](https://github.com/Shen-fons)_
--   _[Dinan](https://github.com/DDJkln)_
-
+-   _[Hashan](https://github.com/Hashan-Samarakkody)_
