@@ -113,7 +113,7 @@ To start using the SwiftStock application:
 
 1. **Start Apache and MySQL**: Ensure both Apache and MySQL services are running on your server.
 2. **Deploy the Project**: Place the project directory in the Apache server root or configure a virtual host to point to the project directory.
-3. **Access the Application**: If you are using Apache server, open your web browser at `http://localhost/Web_Dev-1/`. Or, if you are using a virtual host, configure it to point to the project directory.
+3. **Access the Application**: If you are using Apache server, open your web browser at `http://localhost/REPOSITORY-NAME/PROJECT/`. Or, if you are using a virtual host, configure it to point to the project directory.
 4. **Default users**:
     - User name :- `user`
     - Password :- `User@001`
