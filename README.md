@@ -74,7 +74,7 @@ Follow these steps to install the SwiftStock application on your local or server
 1. **Clone the Repository**: Use Git to clone the repository to your local machine. Run the following command in your terminal, replacing `YOUR-USERNAME` with your GitHub username:
 
     ```bash
-    git clone https://github.com/YOUR-USERNAME/Web-Dev_1.git
+    git clone https://github.com/YOUR-USERNAME/REPOSITORY-NAME.git
     ```
 
 2. **Move the Project Folder**: After cloning, move the root folder of the project to the deployment directory of your web server. For Apache, this is typically the `htdocs` folder.
