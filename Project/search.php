@@ -11,10 +11,17 @@ if (!isset($_SESSION['loggedIn'])) {
 // Set the database connection
 require_once 'DBconnection.php';
 
+// Function to sanitize input
+function sanitize_input($data)
+{
+    return htmlspecialchars(stripslashes(trim($data)));
+}
+
 // Initialize variables for search parameters and pagination
-$search_id       = isset($_GET['id']) ? intval($_GET['id']) : null;
-$search_name     = isset($_GET['name']) ? $_GET['name'] : null;
-$search_category = isset($_GET['category']) ? $_GET['category'] : null;
+
+$search_id       = isset($_GET['id']) ? sanitize_input($_GET['id']) : null;
+$search_name     = isset($_GET['name']) ? sanitize_input($_GET['name']) : null;
+$search_category = isset($_GET['category']) ? sanitize_input($_GET['category']) : null;
 
 $items_per_page = isset($_GET['items_per_page']) ? intval($_GET['items_per_page']) : 5;
 $page           = isset($_GET['page']) ? intval($_GET['page']) : 1;
@@ -155,7 +162,7 @@ require_once 'Components/navigation/navigation.php';
             <!-- Search Inputs -->
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="id">Search by Item ID:</label>
-                <input type="search" id="id" name="id" min='1' pattern="[0-9]+" class="form-control w-50" value="<?php echo htmlspecialchars($search_id); ?>" placeholder="Enter item ID" title="Must contain numbers only">
+                <input type="number" id="id" name="id" min='1' pattern="[0-9]+" class="form-control w-50" value="<?php echo htmlspecialchars($search_id); ?>" placeholder="Enter item ID" title="Must contain numbers only">
             </div>
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="name">Search by Item Name:</label>
