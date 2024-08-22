@@ -25,6 +25,10 @@ SwiftStock is an advanced Inventory Management System tailored to streamline the
 
 You can view a live demo of the application here: [SwiftStock Demo](http://swiftstock.zya.me/)
 
+**_Defult User Account,_**
+User Name :- `user`
+Password :- `User@001`
+
 ### 2. Features
 
 SwiftStock offers a rich set of features designed to make inventory management simple and efficient:
@@ -182,4 +186,5 @@ SwiftStock was developed by **Group 8** as the final project for the Web Applica
 -   _[Githmi](https://github.com/Githz26)_
 -   _[Mathumithan](https://github.com/Mathu20011013)_
 -   _[Shenal](https://github.com/Shen-fons)_
+-   _[Dinan](https://github.com/DDJ-02)_
 -   _[Hashan](https://github.com/Hashan-Samarakkody)_
