@@ -1,0 +1,275 @@
+/* =========================
+   General Styles
+   ========================= */
+   .typewrite {
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+p {
+    color: black;
+    text-align: justify;
+}
+
+h1 a {
+    text-decoration: none;
+}
+
+h4 {
+    text-align: center;
+}
+
+h5 {
+    margin: 4px 5px;
+    padding: 5px;
+    font-size: 22px;
+    text-align: justify;
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Floating Animation
+   ========================= */
+.floating {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+
+    50% {
+        transform: translate(0, 15px);
+    }
+
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+/* =========================
+   Card Styles
+   ========================= */
+
+.card {
+    border: none;
+    gap: 5px;
+}
+
+.custom-card {
+    background-color: rgba(185, 215, 233, 0.616);
+    border: none;
+    max-height: min-content;
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 0 50px;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 270px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+/* =========================
+   Button Styles
+   ========================= */
+#getstartedbtn {
+    background:rgb(13, 110, 251);
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+    color: white;
+}
+
+#getstartedbtn:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+#getstartedbtn:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}
+
+/* ------------------------------------ */
+#loginbtn {
+    width: 90px;
+    height: 30px;
+    background: rgb(13, 110, 251);
+    border: none;
+    color: white;
+    font-size: 1.1em;
+    border-radius: 45px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 550;
+    margin-right: 15px;
+}
+
+#loginbtn:hover {
+    color:rgb(13, 110, 251);
+    background: white;
+    border: 1px solid rgb(13, 110, 251);
+
+}
+
+/* =========================
+   Testimonial Styles
+   ========================= */
+.testimonial1 {
+    font-family: "Poppins", sans-serif;
+    color: #8d97ad;
+    font-weight: 300;
+}
+
+.testimonial1 .bg-light {
+    background-color: #f4f8fa !important;
+}
+
+.testimonial1 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+}
+
+.testimonial1 .testi1 .card-body {
+    padding: 35px;
+}
+
+.testimonial1 .testi1 .thumb {
+    padding: 10px 20px;
+    padding-left: 90px;
+    margin-left: -35px;
+}
+
+.testimonial1 .testi1 .thumb .thumb-img {
+    width: 60px;
+    left: 20px;
+    top: -10px;
+}
+
+.testimonial1 .testi1 h5 {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.testimonial1 .testi1 .devider {
+    height: 1px;
+    background: rgba(120, 130, 140, 0.13);
+    width: 100px;
+}
+
+.testimonial1 .bg-success-gradiant {
+    background: #2cdd9b;
+    background: -webkit-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: -o-linear-gradient(left, #2cdd9b 0%, #1dc8cc 100%);
+    background: linear-gradient(to right, #2cdd9b 0%, #1dc8cc 100%);
+    background-color: rgb(229, 235, 241);
+}
+
+.testimonial1 .card.card-shadow {
+    -webkit-box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+    box-shadow: 0px 0px 30px rgba(115, 128, 157, 0.1);
+}
+
+.testimonial1 .owl-theme .owl-dots .owl-dot.active span,
+.testimonial1 .owl-theme .owl-dots .owl-dot:hover span {
+    background: #316ce8;
+}
+
+/* =========================
+   Heading Styles
+   ========================= */
+h2 {
+    color: black;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+/* =========================
+    Scroll Animation
+   ========================= */
+.hidden-cls{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1050ms;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+/* =========================
+   Media Queries
+   ========================= */
+
+/* Responsive styling for screens smaller than 1000px */
+@media (max-width: 1000px) {
+    .card-img-top {
+        height: 200px;
+    }
+
+    h5 {
+        margin: 30px 10px;
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .descriptio {
+        margin: 50px;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .typewrite {
+        font-size: 27px;
+    }
+
+    h6 {
+        font-size: 13px;
+    }
+
+    h1,
+    h6 {
+        text-align: center;
+        text-decoration: none;
+    }
+
+    h2 {
+        font-size: 25;
+    }
+}
+
+/* Styling for testimonials on screens larger than 992px */
+@media (min-width: 992px) {
+    .testimonials .testimonial-item p {
+        width: 80%;
+    }
+}
