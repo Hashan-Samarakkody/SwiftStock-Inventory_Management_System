@@ -166,11 +166,11 @@ require_once 'Components/navigation/navigation.php';
             </div>
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="name">Search by Item Name:</label>
-                <input type="search" id="name" name="name" pattern="[a-zA-Z]+" title="Must contain lowercase or uppercase letters only" class="form-control w-50" value="<?php echo htmlspecialchars($search_name); ?>" placeholder="Enter item name">
+                <input type="search" id="name" name="name" pattern="^[A-Za-z0-9\- ]+$" title="Only letters, digits, hypen and spaces are allowed" class="form-control w-50" value="<?php echo htmlspecialchars($search_name); ?>" placeholder="Enter item name">
             </div>
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="category">Search by Category:</label>
-                <input type="search" id="category" name="category" pattern="[a-zA-Z]+" title="Must contain lowercase or uppercase letters only" class="form-control w-50" value="<?php echo htmlspecialchars($search_category); ?>" placeholder="Enter category name">
+                <input type="search" id="category" name="category" pattern="[A-Za-z ]+" title="Only letters and spaces are allowed" class="form-control w-50" value="<?php echo htmlspecialchars($search_category); ?>" placeholder="Enter category name">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Search</button>
