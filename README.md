@@ -27,7 +27,7 @@ You can view a live demo of the application here: [SwiftStock Demo](http://swift
 
 **_Defult User Account,_**
 User Name :- `user`
-Password :- `User@001`
+Password :- `User@123`
 
 ### 2. Features
 
