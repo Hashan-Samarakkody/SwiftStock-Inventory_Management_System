@@ -11,21 +11,10 @@ if (!isset($_SESSION['loggedIn'])) {
 // Set the database connection
 require_once 'DBconnection.php';
 
-// Function to sanitize input
-function sanitize_input($data)
-{
-    return htmlspecialchars(stripslashes(trim($data)));
-}
-
 // Initialize variables for search parameters and pagination
-
-$search_id       = isset($_GET['id']) ? sanitize_input($_GET['id']) : null;
-$search_name     = isset($_GET['name']) ? sanitize_input($_GET['name']) : null;
-$search_category = isset($_GET['category']) ? sanitize_input($_GET['category']) : null;
-
-$items_per_page = isset($_GET['items_per_page']) ? intval($_GET['items_per_page']) : 5;
-$page           = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$offset         = ($page - 1) * $items_per_page;
+$search_id       = isset($_GET['id']) ? intval($_GET['id']) : null;
+$search_name     = isset($_GET['name']) ? $_GET['name'] : null;
+$search_category = isset($_GET['category']) ? $_GET['category'] : null;
 
 // Initialize feedback messages
 $feedback_message = "";
@@ -42,30 +31,27 @@ if ($search_id) {
     $query = "SELECT items.id, items.name, items.description, items.quantity, items.price, categories.category
               FROM items
               LEFT JOIN categories ON items.category_id = categories.id
-              WHERE items.id = ?
-              LIMIT ?, ?";
-    $params = [$search_id, $offset, $items_per_page];
-    $type   = 'iii'; // Integer for ID, and two integers for offset and items_per_page
+              WHERE items.id = ?";
+    $params = [$search_id];
+    $type   = 'i'; // Integer for ID, and two integers for offset and items_per_page
 
 } elseif ($search_name) {
     // Search by item name
     $query = "SELECT items.id, items.name, items.description, items.quantity, items.price, categories.category
               FROM items
               LEFT JOIN categories ON items.category_id = categories.id
-              WHERE items.name LIKE ?
-              LIMIT ?, ?";
-    $params = ["%$search_name%", $offset, $items_per_page];
-    $type   = 'sii'; // String for name, and two integers for offset and items_per_page
+              WHERE items.name LIKE ?";
+    $params = ["%$search_name%"];
+    $type   = 's'; // String for name, and two integers for offset and items_per_page
 
 } elseif ($search_category) {
     // Search by category
     $query = "SELECT items.id, items.name, items.description, items.quantity, items.price, categories.category
               FROM items
               LEFT JOIN categories ON items.category_id = categories.id
-              WHERE categories.category LIKE ?
-              LIMIT ?, ?";
-    $params = ["%$search_category%", $offset, $items_per_page];
-    $type   = 'sii'; // String for category, and two integers for offset and items_per_page
+              WHERE categories.category LIKE ?";
+    $params = ["%$search_category%"];
+    $type   = 's'; // String for category, and two integers for offset and items_per_page
 
 } else {
     $feedback_message = "Please provide a search criteria.";
@@ -112,7 +98,6 @@ if ($query) {
             $count_stmt->execute();
             $total_items_result = $count_stmt->get_result();
             $total_items = $total_items_result->fetch_assoc()['total'];
-            $total_pages = ceil($total_items / $items_per_page);
 
             // Check if any items were found
             if ($all_items_result->num_rows > 0) {
@@ -162,32 +147,22 @@ require_once 'Components/navigation/navigation.php';
             <!-- Search Inputs -->
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="id">Search by Item ID:</label>
-                <input type="number" id="id" name="id" min='1' pattern="[0-9]+" class="form-control w-50" value="<?php echo htmlspecialchars($search_id); ?>" placeholder="Enter item ID" title="Must contain numbers only">
+                <input type="search" id="id" name="id" min='1' pattern="[0-9]+" class="form-control w-50" value="<?php echo htmlspecialchars($search_id); ?>" placeholder="Enter item ID" title="Must contain numbers only">
             </div>
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="name">Search by Item Name:</label>
-                <input type="search" id="name" name="name" pattern="^[A-Za-z0-9\- ]+$" title="Only letters, digits, hypen and spaces are allowed" class="form-control w-50" value="<?php echo htmlspecialchars($search_name); ?>" placeholder="Enter item name">
+                <input type="search" id="name" name="name" pattern="[a-zA-Z]+" title="Must contain lowercase or uppercase letters only" class="form-control w-50" value="<?php echo htmlspecialchars($search_name); ?>" placeholder="Enter item name">
             </div>
             <div>
                 <label style="font-size: 20px; font-weight:500;" for="category">Search by Category:</label>
-                <input type="search" id="category" name="category" pattern="[A-Za-z ]+" title="Only letters and spaces are allowed" class="form-control w-50" value="<?php echo htmlspecialchars($search_category); ?>" placeholder="Enter category name">
+                <input type="search" id="category" name="category" pattern="[a-zA-Z]+" title="Must contain lowercase or uppercase letters only" class="form-control w-50" value="<?php echo htmlspecialchars($search_category); ?>" placeholder="Enter category name">
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Search</button>
             <button type="submit" id="clearBtn" class="btn btn-outline-secondary">Clear</button>
         </form>
 
-        <!-- Items per Page Selector -->
         <div class="card-body">
-            <form method="GET" action="">
-                <label class="form-label" for="items_per_page">Items per Page:</label>
-                <select class="selectpicker" id="items_per_page" name="items_per_page" onchange="this.form.submit()">
-                    <option value="5" <?php echo ($items_per_page == 5) ? 'selected' : ''; ?>>5</option>
-                    <option value="10" <?php echo ($items_per_page == 10) ? 'selected' : ''; ?>>10</option>
-                    <option value="20" <?php echo ($items_per_page == 20) ? 'selected' : ''; ?>>20</option>
-                </select>
-            </form>
-
             <!-- Display Feedback Messages -->
             <?php if (!empty($feedback_message)):
                 if (str_contains($feedback_message, 'No')) {
@@ -226,31 +201,6 @@ require_once 'Components/navigation/navigation.php';
                     </table>
                 </div>
                 <br>
-                <!-- Pagination Controls -->
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        <!-- Previous Button -->
-                        <li class="page-item <?php if ($page <= 1) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="?page=<?php echo max(1, $page - 1); ?>&items_per_page=<?php echo $items_per_page; ?>&<?php echo http_build_query(array_diff_key($_GET, array_flip(['page', 'items_per_page']))); ?>">Previous</a>
-                        </li>
-                        <!-- Page Numbers -->
-                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                            <li class="page-item <?php if ($i == $page) {
-                                                        echo 'active';
-                                                    } ?>">
-                                <a class="page-link" href="?page=<?php echo $i; ?>&items_per_page=<?php echo $items_per_page; ?>&<?php echo http_build_query(array_diff_key($_GET, array_flip(['page', 'items_per_page']))); ?>"><?php echo $i; ?></a>
-                            </li>
-                        <?php endfor; ?>
-                        <!-- Next Button -->
-                        <li class="page-item <?php if ($page >= $total_pages) {
-                                                    echo 'disabled';
-                                                } ?>">
-                            <a class="page-link" href="?page=<?php echo min($total_pages, $page + 1); ?>&items_per_page=<?php echo $items_per_page; ?>&<?php echo http_build_query(array_diff_key($_GET, array_flip(['page', 'items_per_page']))); ?>">Next</a>
-                        </li>
-                    </ul>
-                </nav>
             <?php endif; ?>
         </div>
         <br>
